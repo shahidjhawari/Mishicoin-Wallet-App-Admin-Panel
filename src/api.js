@@ -1,13 +1,16 @@
 import axios from "axios";
 
-// Point this at your running Mishicoin backend
-export const API_BASE_URL = "http://localhost:5000/api";
+// Point this at your running Mishicoin backend.
+// Set VITE_API_BASE_URL in .env to override (defaults to production).
+export const API_BASE_URL =
+  import.meta.env.VITE_API_BASE_URL || "http://localhost:5000/api";
 
 const api = axios.create({
   baseURL: API_BASE_URL,
 });
 
-// Attach the admin JWT (saved after login) to every request
+// Attach the admin JWT (obtained via silent auto-login, see App.jsx) to
+// every request.
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem("mishicoin_admin_token");
   if (token) {

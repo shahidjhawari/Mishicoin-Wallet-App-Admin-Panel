@@ -16,7 +16,7 @@ const resolveImageUrl = (url) => {
   return `${host}${url}`;
 };
 
-export default function Dashboard({ admin, onLogout }) {
+export default function Dashboard({ admin }) {
   const [deposits, setDeposits] = useState([]);
   const [loading, setLoading] = useState(true);
   const [actionId, setActionId] = useState(null); // id currently being approved/rejected
@@ -65,13 +65,7 @@ export default function Dashboard({ admin, onLogout }) {
           </span>
         </div>
         <div className="flex items-center gap-4">
-          <span className="text-sm text-slate-400 hidden sm:inline">{admin?.email}</span>
-          <button
-            onClick={onLogout}
-            className="text-sm text-slate-300 border border-line rounded-lg px-3 py-1.5 hover:border-coin hover:text-coin transition-colors"
-          >
-            Sign out
-          </button>
+          <span className="text-sm text-slate-400">{admin?.username}</span>
         </div>
       </header>
 
