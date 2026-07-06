@@ -4,7 +4,7 @@ import api from "../api";
 // Simple admin login screen. On success it stores the JWT and lifts the
 // authenticated user up to App.jsx via onLogin.
 export default function LoginGate({ onLogin }) {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -14,7 +14,7 @@ export default function LoginGate({ onLogin }) {
     setError("");
     setLoading(true);
     try {
-      const { data } = await api.post("/auth/login", { email, password });
+      const { data } = await api.post("/auth/login", { username, password });
 
       if (data.user.role !== "admin") {
         setError("This account does not have admin access.");
@@ -53,15 +53,15 @@ export default function LoginGate({ onLogin }) {
           </p>
 
           <label className="block text-xs uppercase tracking-wide text-slate-400 mb-1">
-            Email
+            Username
           </label>
           <input
-            type="email"
+            type="text"
             required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
             className="w-full mb-4 bg-ink border border-line rounded-lg px-3 py-2 text-white text-sm outline-none focus:border-coin transition-colors"
-            placeholder="admin@mishicoin.com"
+            placeholder="admin"
           />
 
           <label className="block text-xs uppercase tracking-wide text-slate-400 mb-1">
