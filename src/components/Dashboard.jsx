@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import DepositsTable from "./DepositsTable";
 import WithdrawalsTable from "./WithdrawalsTable";
+import HistoryTable from "./HistoryTable";
 import SettingsPanel from "./SettingsPanel";
 
 const TABS = [
   { key: "deposits", label: "Deposits" },
   { key: "withdrawals", label: "Withdrawals" },
+  { key: "history", label: "History" },
   { key: "settings", label: "Settings" },
 ];
 
@@ -51,6 +53,7 @@ export default function Dashboard({ admin }) {
       <main className="max-w-6xl mx-auto px-6 py-8">
         {activeTab === "deposits" && <DepositsTable />}
         {activeTab === "withdrawals" && <WithdrawalsTable />}
+        {activeTab === "history" && <HistoryTable />}
         {activeTab === "settings" && <SettingsPanel />}
       </main>
     </div>
