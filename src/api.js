@@ -3,7 +3,7 @@ import axios from "axios";
 // Point this at your running Mishicoin backend.
 // Set VITE_API_BASE_URL in .env to override (defaults to production).
 export const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL || "http://localhost:5000/api";
+  import.meta.env.VITE_API_BASE_URL || "https://mishicoinbackend.vercel.app/api";
 
 const api = axios.create({
   baseURL: API_BASE_URL,
