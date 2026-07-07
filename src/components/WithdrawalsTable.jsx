@@ -105,7 +105,7 @@ export default function WithdrawalsTable() {
                       <div className="text-xs text-slate-500">{w.user?.email}</div>
                     </td>
                     <td className="px-4 py-3 font-semibold text-coin">
-                      {Number(w.amount).toLocaleString()} coins
+                      ${Number(w.amount).toLocaleString(undefined, { minimumFractionDigits: 2 })}
                     </td>
                     <td className="px-4 py-3 text-slate-300">{w.accountName}</td>
                     <td className="px-4 py-3 text-slate-300">{w.accountNumber}</td>

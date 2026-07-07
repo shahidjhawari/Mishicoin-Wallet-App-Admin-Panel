@@ -110,7 +110,7 @@ export default function DepositsTable() {
                   <tr key={d._id} className="border-b border-line/60 hover:bg-ink/40">
                     <td className="px-4 py-3">{d.user?.email || "—"}</td>
                     <td className="px-4 py-3 font-semibold text-coin">
-                      Rs {Number(d.amount).toLocaleString()}
+                      ${Number(d.amount).toLocaleString(undefined, { minimumFractionDigits: 2 })}
                     </td>
                     <td className="px-4 py-3 text-slate-300">{d.transactionId}</td>
                     <td className="px-4 py-3 text-slate-300">{d.mobileNumber}</td>

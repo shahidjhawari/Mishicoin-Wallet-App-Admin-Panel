@@ -6,27 +6,27 @@ const FIELD_GROUPS = [
     title: "Mining (Daily Earning)",
     fields: [
       { key: "miningSessionHours", label: "Session length (hours)", step: "1" },
-      { key: "miningRatePerHour", label: "Coins earned per hour", step: "0.01" },
+      { key: "miningRatePerHour", label: "Earned per hour ($)", step: "0.01" },
     ],
   },
   {
     title: "Watch Ad Earning",
     fields: [
-      { key: "adRewardAmount", label: "Coins per ad watched", step: "0.01" },
+      { key: "adRewardAmount", label: "Reward per ad watched ($)", step: "0.01" },
       { key: "adDailyLimit", label: "Max ads per day", step: "1" },
     ],
   },
   {
     title: "Referral Earning (3 levels)",
     fields: [
-      { key: "referralLevel1Bonus", label: "Level 1 bonus (direct invite)", step: "0.01" },
-      { key: "referralLevel2Bonus", label: "Level 2 bonus", step: "0.01" },
-      { key: "referralLevel3Bonus", label: "Level 3 bonus", step: "0.01" },
+      { key: "referralLevel1Bonus", label: "Level 1 bonus ($) — direct invite", step: "0.01" },
+      { key: "referralLevel2Bonus", label: "Level 2 bonus ($)", step: "0.01" },
+      { key: "referralLevel3Bonus", label: "Level 3 bonus ($)", step: "0.01" },
     ],
   },
   {
     title: "Withdrawals",
-    fields: [{ key: "minWithdrawalAmount", label: "Minimum withdrawal (coins)", step: "0.01" }],
+    fields: [{ key: "minWithdrawalAmount", label: "Minimum withdrawal ($)", step: "0.01" }],
   },
 ];
 
